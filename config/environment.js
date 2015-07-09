@@ -14,6 +14,7 @@ module.exports = function(environment) {
     },
 
     APP: {
+      authorization: 'simple-auth-authorizer:devise'
       // Here you can pass flags/options to your application instance
       // when it is created
     }

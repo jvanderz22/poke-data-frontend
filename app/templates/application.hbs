@@ -1,3 +1,20 @@
+<nav class='navbar navbar-inverse'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <div class='navbar-brand'> VGC Battle Tracker </div>
+    </div>
+    <div class='collapse navbar-collapse'>
+      <ul class='nav navbar-nav'>
+        {{#if session.isAutheticated}}
+          <li> <a {{action 'invalidateSession'}}>Logout</a></li>
+        {{else}}
+          <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <h2 id="title">Welcome to Ember.js</h2>
 
 {{outlet}}
