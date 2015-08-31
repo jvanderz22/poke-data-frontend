@@ -1,0 +1,20 @@
+<div class=container'>
+  <form class="form-team">
+    <h1 class="form-team-heading text-muted"> Create Team </h1>
+    <div>
+      {{input type=text value=name autofocus="autofocus" placeholder="Team Name"}}
+    </div>
+    <div>
+      <h3> Choose your team </h3>
+      {{pokemon-select value=pokemon1}}
+      {{pokemon-select value=pokemon2}}
+      {{pokemon-select value=pokemon3}}
+      {{pokemon-select action=(action (mut pokemon4))}}
+      {{pokemon-select action=(action (mut pokemon5))}}
+      {{pokemon-select action=(action (mut pokemon6))}}
+    </div>
+    <button {{action 'create'}} class='btn btn-primary form-submit'>
+      Create
+    </button>
+  </form>
+</div>
