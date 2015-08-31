@@ -2,17 +2,31 @@
   <form class="form-team">
     <h1 class="form-team-heading text-muted"> Create Team </h1>
     <div>
-      {{input type=text value=name autofocus="autofocus" placeholder="Team Name"}}
+      {{input type=text value=model.name autofocus="autofocus" placeholder="Team Name"}}
     </div>
     <div>
       <h3> Choose your team </h3>
-      {{pokemon-select value=pokemon1}}
-      {{pokemon-select value=pokemon2}}
-      {{pokemon-select value=pokemon3}}
-      {{pokemon-select action=(action (mut pokemon4))}}
-      {{pokemon-select action=(action (mut pokemon5))}}
-      {{pokemon-select action=(action (mut pokemon6))}}
+      <div class="form-group">
+        {{pokemon-select value=model.pokemon1}}
+      </div>
+      <div class="form-group">
+        {{pokemon-select value=model.pokemon2}}
+      </div>
+      <div class="form-group">
+        {{pokemon-select value=model.pokemon3}}
+      </div>
+      <div class="form-group">
+        {{pokemon-select value=model.pokemon4}}
+      </div>
+      <div class="form-group">
+        {{pokemon-select value=model.pokemon5}}
+      </div>
+      <div class="form-group">
+        {{pokemon-select value=model.pokemon6}}
+      </div>
     </div>
+
+    {{error-handler errors=submissionErrors}}
     <button {{action 'create'}} class='btn btn-primary form-submit'>
       Create
     </button>

@@ -12,13 +12,4 @@ export default Ember.Component.extend({
     });
     return mappedPokemon;
   }),
-
-  a: function(value) {
-      console.log(value);
-  },
-  actions: {
-    a: function(value) {
-      console.log(value);
-    }
-  }
 });
