@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
     var pokemonNumbers = ['1', '2', '3', '4', '5', '6'];
     var _this = this;
     pokemonNumbers.forEach( function(number) {
-      var getString = "model.pokemon" + number;
+      var getString = "content.pokemon" + number;
       var pokemon = _this.get(getString);
       if (!pokemonList.contains(pokemon)) {
         var error = 'Pokemon  #' + number + ' "' + pokemon + '" is not a valid pokemon';
@@ -25,9 +25,14 @@ export default Ember.Controller.extend({
 
   actions: {
     create: function () {
-      var model = this.get('model');
-      if (this._validatePokemon(model)) {
-        team = this.get('store').createRecord('team', model);
+      var content = this.get('content');
+      if (this._validatePokemon(content)) {
+        var team = this.get('store').createRecord('team', {
+          user_id: content.user_id,
+          name: content.name,
+          pokemon: [content.pokemon1, content.pokemon2, content.pokemon3,
+            content.pokemon4, content.pokemon5, content.pokemon6]
+        });
         team.save();
       }
     }

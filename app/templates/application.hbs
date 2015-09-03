@@ -5,9 +5,19 @@
     </div>
 
     <ul class="nav navbar-nav">
-      {{#link-to 'create-team' tagName="li"}}
-        {{link-to 'Create Team' 'create-team'}}
+      {{#link-to 'teams.create' tagName='li'}}
+        {{link-to 'Create Team' 'teams.create'}}
       {{/link-to}}
+
+      {{#if session.isAuthenticated}}
+        {{#link-to 'logout' tagName='li'}}
+          {{link-to 'Logout' 'logout'}}
+        {{/link-to}}
+      {{else}}
+        {{#link-to 'login' tagName='li'}}
+          {{link-to 'Login' 'login'}}
+        {{/link-to}}
+      {{/if}}
     </ul>
   </div>
 </nav>

@@ -1,13 +1,13 @@
 <form {{action 'signUp' on='submit'}}>
   <label for='email'>Email</label>
-  {{input value=email}}
+  {{input value=content.email}}
   <label for='password'>Password</label>
-  {{input value=password type='password'}}
+  {{input value=content.password type='password'}}
   <label for='identification'>Password Confirmation</label>
-  {{input value=passwordConfirmation type='password'}}
+  {{input value=content.passwordConfirmation type='password'}}
   <button type='submit'>Sign up</button>
 </form>
 
 <div>
-  {{#link-to 'sign-in'}}Sign In{{/link-to}}
+  {{#link-to 'login'}}Sign In{{/link-to}}
 </div>
