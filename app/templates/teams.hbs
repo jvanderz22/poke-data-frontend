@@ -7,7 +7,16 @@
 
   <div class="row">
     <div class="col-md-3">
-      Team list here
+      {{#link-to 'teams.create' tagName='button' class="btn btn-main"}}
+        New Team
+      {{/link-to}}
+      {{#each model as |team|}}
+        <div>
+          {{#link-to 'teams.show' team.id}}
+            {{team.name}}
+          {{/link-to}}
+        </div>
+      {{/each}}
     </div>
 
     <div class="col-md-9">

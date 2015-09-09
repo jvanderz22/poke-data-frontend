@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   pokemonList: Ember.inject.service(),
+  routing: Ember.inject.service('-routing'),
   store: Ember.inject.service(),
   submissionErrors: [],
 
@@ -33,7 +34,10 @@ export default Ember.Controller.extend({
           pokemon: [content.pokemon1, content.pokemon2, content.pokemon3,
             content.pokemon4, content.pokemon5, content.pokemon6]
         });
-        team.save();
+        var promise = team.save();
+        promise.then(data => {
+          this.get('routing').transitionTo('teams')
+        });
       }
     }
   }

@@ -1,0 +1,7 @@
+<h3> {{model.name}} </h3>
+
+{{#each model.pokemon as |pokemon|}}
+  <div> {{pokemon}} </div>
+{{/each}}
+
+{{delete-button content=model confirmationNeeded=true}}

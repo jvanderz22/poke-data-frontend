@@ -11,7 +11,7 @@ Router.map(function() {
   this.route('logout');
   this.route('sign-up');
   this.route('teams', function() {
-    this.route('team', { path: ':teamId' });
+    this.route('show', { path: ':teamId' });
     this.route('create');
   });
 });

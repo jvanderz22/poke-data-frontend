@@ -1,0 +1,22 @@
+<button {{action "delete"}} class="btn btn-warn">
+  Delete
+</button>
+
+{{#if confirmDelete}}
+  <div>
+    Are you sure you want to delete?
+  </div>
+
+  <div>
+    <span>
+      <button {{action "confirmDelete"}} class="btn btn-warn">
+        Yes
+      </button>
+    </span>
+    <span>
+      <button {{action "cancelDelete"}} class="btn btn-warn">
+       No
+      </button>
+    </span>
+  </div>
+{{/if}}
